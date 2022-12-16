@@ -17,9 +17,9 @@ import javax.mail.internet.MimeMessage.RecipientType;
 public class MailUtils {
     public static void main(String[] args) throws MessagingException {
         //可以在这里直接测试方法，填自己的邮箱即可
-        sendTestMail("1586385296@qq.com", new MailUtils().achieveCode());
+        sendTestMail("1843981971@qq.com", new MailUtils().achieveCode());
     }
-
+    //https://www.baeldung.com/java-email
     public static void sendTestMail(String email, String code) throws MessagingException {
         // 创建Properties 类用于记录邮箱的一些属性
         Properties props = new Properties();
@@ -30,7 +30,7 @@ public class MailUtils {
         //端口号，QQ邮箱端口587
         props.put("mail.smtp.port", "587");
         // 此处填写，写信人的账号
-        props.put("mail.user", "1586385296@qq.com");
+        props.put("mail.user", "1843981971@qq.com");
         // 此处填写16位STMP口令
         props.put("mail.password", "qfvudrccidkahadg");
         // 构建授权信息，用于进行SMTP进行身份验证
@@ -44,6 +44,8 @@ public class MailUtils {
         };
         // 使用环境属性和授权信息，创建邮件会话
         Session mailSession = Session.getInstance(props, authenticator);
+
+
         // 创建邮件消息
         MimeMessage message = new MimeMessage(mailSession);
         // 设置发件人
